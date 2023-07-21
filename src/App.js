@@ -1,27 +1,20 @@
-import logo from './logo.svg';
-import mugshot from './mugshot.jpg';
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Main from './components/Main';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={mugshot} className="Mug-shot" alt="my funny face"/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React in a day!
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className='App'>
+        <Header />
+        <Main />
+        <Footer />
+
+      </div>
+    );
+  }
 }
 
 export default App;
