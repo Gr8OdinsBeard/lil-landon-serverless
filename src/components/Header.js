@@ -1,7 +1,23 @@
-import React from "react";
-import menuLinksData from "./data/menu_links.json"
+import React, {useState, useEffect} from "react";
+// import menuLinksData from "./data/menu_links.json"
 
 const Header = () => {
+  const [menuLinksData, setMenuLinksData] = useState([]);
+
+  const loadMenuLinksData = async() => {
+    // query API GW
+    const resp = await fetch('https://zogq2zzm1b.execute-api.eu-west-1.amazonaws.com/Production/menu-links');
+    let jsonData = await resp.json();
+
+    // assign response data to our state variable
+    setMenuLinksData(jsonData);
+  };
+  
+  useEffect(()=> {
+    // load menu links data from API GW
+    loadMenuLinksData();
+  }, [])
+
   return (
     <header id="intro">
       <article className="fullheight">
