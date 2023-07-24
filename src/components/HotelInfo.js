@@ -25,8 +25,9 @@ const HotelInfo = () => {
   };
 
   useEffect(()=> {
-    //load service data from API GW
+    // load service data from API GW
     loadServicesData();
+    // load accessibility data from API GW
     loadAccessibilityData();
   }, [])
 
